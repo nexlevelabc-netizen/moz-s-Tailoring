@@ -1,13 +1,55 @@
-// Handle logo image error
+// Handle circular text creation for rotating logo
 document.addEventListener('DOMContentLoaded', function() {
-    // Logo error handling
-    const logoImages = document.querySelectorAll('.logo-image, .footer-logo-image');
-    logoImages.forEach(img => {
-        img.addEventListener('error', function() {
-            this.classList.add('error');
-            console.log('Logo image failed to load. Using fallback.');
-        });
-    });
+    // Create circular text for header and footer logos
+    createCircularText();
+    
+    function createCircularText() {
+        // Header logo
+        const circularText = document.getElementById('circularText');
+        if (circularText) {
+            const text = "MOZ'S TAILORING • MOZ'S TAILORING • ";
+            circularText.innerHTML = '';
+            const characters = text.split('');
+            const radius = 50;
+            const totalChars = characters.length;
+            const angleStep = (2 * Math.PI) / totalChars;
+            
+            characters.forEach((char, index) => {
+                const angle = index * angleStep;
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.transform = `rotate(${angle}rad)`;
+                span.style.position = 'absolute';
+                span.style.left = '50%';
+                span.style.top = '0';
+                span.style.transformOrigin = '0 50px';
+                circularText.appendChild(span);
+            });
+        }
+        
+        // Footer logo
+        const footerCircularText = document.getElementById('footerCircularText');
+        if (footerCircularText) {
+            const text = "MOZ'S TAILORING • MOZ'S TAILORING • ";
+            footerCircularText.innerHTML = '';
+            const characters = text.split('');
+            const radius = 65;
+            const totalChars = characters.length;
+            const angleStep = (2 * Math.PI) / totalChars;
+            
+            characters.forEach((char, index) => {
+                const angle = index * angleStep;
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.transform = `rotate(${angle}rad)`;
+                span.style.position = 'absolute';
+                span.style.left = '50%';
+                span.style.top = '0';
+                span.style.transformOrigin = '0 65px';
+                footerCircularText.appendChild(span);
+            });
+        }
+    }
     
     // Mobile Navigation Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
@@ -62,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Hero Image Slideshow Functionality (only on home page)
     const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.dot');
     
     if (slides.length > 0) {
         let currentSlide = 0;
@@ -77,44 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to current slide
             slides[index].classList.add('active');
             currentSlide = index;
-            
-            // Update dots if they exist (they're hidden but still functional)
-            if (dots.length > index) {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-            }
         }
         
         function nextSlide() {
             let nextIndex = (currentSlide + 1) % slides.length;
             showSlide(nextIndex);
         }
-        
-        function prevSlide() {
-            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(prevIndex);
-        }
-        
-        // Set up click events for dots (even though hidden, they still work if someone clicks where they would be)
-        if (dots.length > 0) {
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showSlide(index);
-                    resetSlideTimer(); // Reset timer when manually changing slide
-                });
-            });
-        }
-        
-        // Keyboard navigation for slideshow (optional enhancement)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-                resetSlideTimer();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-                resetSlideTimer();
-            }
-        });
         
         let slideTimer;
         
@@ -140,37 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heroSection.addEventListener('mouseleave', () => {
                 startSlideTimer();
             });
-        }
-        
-        // Touch swipe functionality for mobile (optional enhancement)
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        if (heroSection) {
-            heroSection.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-            
-            heroSection.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-        }
-        
-        function handleSwipe() {
-            const swipeThreshold = 50; // Minimum swipe distance in pixels
-            
-            if (touchEndX < touchStartX - swipeThreshold) {
-                // Swipe left - next slide
-                nextSlide();
-                resetSlideTimer();
-            }
-            
-            if (touchEndX > touchStartX + swipeThreshold) {
-                // Swipe right - previous slide
-                prevSlide();
-                resetSlideTimer();
-            }
         }
         
         // Initialize first slide
