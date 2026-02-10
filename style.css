@@ -104,13 +104,13 @@ section {
     padding: 15px 20px;
 }
 
-/* Logo */
+/* Logo - UPDATED SPACING */
 .logo-container {
     display: flex;
     align-items: center;
     position: relative;
-    width: 160px;
-    height: 140px;
+    width: 200px; /* Increased for better spacing */
+    height: 150px; /* Adjusted height */
 }
 
 .logo-image {
@@ -148,28 +148,31 @@ section {
     display: block;
 }
 
-/* Simple text positions */
+/* Simple text positions - UPDATED SPACING */
 .logo-text-top, .logo-text-bottom {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700; /* Bolder */
     color: #FFFFFF;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px; /* Increased spacing */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
-    opacity: 0.9;
+    opacity: 1; /* Full opacity */
 }
 
 .logo-text-top {
-    top: 5px;
+    top: 15px; /* More space above logo */
+    font-size: 18px; /* Larger for "MOZ'S" */
 }
 
 .logo-text-bottom {
-    bottom: 15px;
+    bottom: 20px; /* More space below logo */
+    font-size: 16px;
+    letter-spacing: 2px; /* More spacing for "TAILORING" */
 }
 
 /* Main Navigation */
@@ -562,10 +565,11 @@ footer {
     margin-bottom: 40px;
 }
 
+/* Footer Logo - Matching header spacing */
 .footer-logo-container {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 200px; /* Matching header width */
+    height: 200px;
     margin-bottom: 20px;
 }
 
@@ -588,27 +592,31 @@ footer {
     background-position: center;
 }
 
+/* Footer text positions - Matching header spacing */
 .footer-text-top, .footer-text-bottom {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     color: #FFFFFF;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .footer-text-top {
-    top: 5px;
+    top: 15px; /* Matching header spacing */
+    font-size: 18px;
 }
 
 .footer-text-bottom {
-    bottom: 5px;
+    bottom: 20px; /* Matching header spacing */
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
 .social-media {
@@ -703,8 +711,8 @@ footer {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .logo-container {
-        width: 140px;
-        height: 120px;
+        width: 180px; /* Adjusted */
+        height: 140px; /* Adjusted */
     }
     
     .logo-image {
@@ -718,6 +726,16 @@ footer {
     
     .hero p {
         font-size: 1.3rem;
+    }
+    
+    .footer-logo-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .footer-logo-image {
+        width: 110px;
+        height: 110px;
     }
 }
 
@@ -739,8 +757,8 @@ footer {
     }
     
     .logo-container {
-        width: 120px;
-        height: 100px;
+        width: 160px;
+        height: 120px;
     }
     
     .logo-image {
@@ -750,6 +768,16 @@ footer {
     
     .hero-content {
         top: 60%;
+    }
+    
+    .footer-logo-container {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .footer-logo-image {
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -814,13 +842,28 @@ footer {
     }
     
     .logo-container {
-        width: 100px;
-        height: 80px;
+        width: 140px;
+        height: 100px;
     }
     
     .logo-image {
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .logo-text-top, .logo-text-bottom {
+        font-size: 14px;
+    }
+    
+    .logo-text-top {
+        top: 12px;
+        font-size: 15px;
+    }
+    
+    .logo-text-bottom {
+        bottom: 15px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
     }
     
     .hero-content {
@@ -834,6 +877,28 @@ footer {
     
     .footer-logo-container {
         margin: 0 auto 20px;
+        width: 140px;
+        height: 140px;
+    }
+    
+    .footer-logo-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .footer-text-top, .footer-text-bottom {
+        font-size: 14px;
+    }
+    
+    .footer-text-top {
+        top: 12px;
+        font-size: 15px;
+    }
+    
+    .footer-text-bottom {
+        bottom: 15px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
     }
 }
 
@@ -863,13 +928,29 @@ footer {
     }
     
     .logo-container {
-        width: 80px;
-        height: 60px;
+        width: 120px;
+        height: 90px;
     }
     
     .logo-image {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-text-top, .logo-text-bottom {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .logo-text-top {
+        top: 10px;
+        font-size: 13px;
+    }
+    
+    .logo-text-bottom {
+        bottom: 12px;
+        font-size: 12px;
+        letter-spacing: 1.2px;
     }
     
     .premium-tagline {
@@ -886,4 +967,35 @@ footer {
         height: 45px;
         font-size: 1.3rem;
     }
+    
+    .footer-logo-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .footer-logo-image {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .footer-text-top, .footer-text-bottom {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .footer-text-top {
+        top: 10px;
+        font-size: 13px;
+    }
+    
+    .footer-text-bottom {
+        bottom: 12px;
+        font-size: 12px;
+        letter-spacing: 1.2px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
