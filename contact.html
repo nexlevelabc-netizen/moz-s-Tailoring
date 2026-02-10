@@ -15,20 +15,100 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Circular Logo Animation */
+        .circular-logo-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .circular-logo-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotateText 20s linear infinite;
+            color: snow;
+        }
+        
+        .circular-logo-text span {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-origin: 0 80px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        @keyframes rotateText {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .logo-fallback {
+            font-family: 'Lato', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: snow;
+            background-color: transparent;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .logo-text-top, .logo-text-bottom {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- Main Header -->
+    <!-- Main Header (Shared) -->
     <header class="main-header">
         <div class="container header-container">
-            <!-- Rotating Circular Logo -->
             <a href="index.html" class="logo-container">
-                <div class="circular-logo">
-                    <div class="circular-text" id="circularText"></div>
-                    <div class="circular-center">M</div>
+                <div class="circular-logo-container">
+                    <div class="circular-logo-text">
+                        <span style="transform: rotate(0deg)">M</span>
+                        <span style="transform: rotate(15deg)">O</span>
+                        <span style="transform: rotate(30deg)">Z</span>
+                        <span style="transform: rotate(45deg)">'</span>
+                        <span style="transform: rotate(60deg)">S</span>
+                        <span style="transform: rotate(90deg)">T</span>
+                        <span style="transform: rotate(105deg)">A</span>
+                        <span style="transform: rotate(120deg)">I</span>
+                        <span style="transform: rotate(135deg)">L</span>
+                        <span style="transform: rotate(150deg)">O</span>
+                        <span style="transform: rotate(165deg)">R</span>
+                        <span style="transform: rotate(180deg)">I</span>
+                        <span style="transform: rotate(195deg)">N</span>
+                        <span style="transform: rotate(210deg)">G</span>
+                    </div>
+                    <div class="logo-fallback">M</div>
                 </div>
             </a>
             
-            <!-- Navigation -->
             <nav class="main-nav">
                 <div class="mobile-toggle">
                     <i class="fas fa-bars"></i>
@@ -46,8 +126,8 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container page-hero-content">
-            <h1 class="fade-in">Get in Touch</h1>
-            <p class="fade-in delay-1">Visit our studio or contact us for a consultation</p>
+            <h1 class="fade-in">Contact Us</h1>
+            <p class="fade-in delay-1">Visit our studio in Grays or get in touch for expert tailoring and alterations.</p>
         </div>
     </section>
 
@@ -55,176 +135,89 @@
     <section id="contact">
         <div class="container">
             <div class="contact-container">
-                <!-- Contact Info -->
                 <div class="contact-info fade-in">
                     <h3>Visit Our Studio</h3>
                     <div class="contact-details">
                         <div>
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Address</strong>
-                                <p>66 Orsett Road, Grays, RM17 5EH</p>
-                            </div>
+                            <p>66 Orsett Road, Grays, RM17 5EH</p>
                         </div>
                         <div>
                             <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>07818 100505</p>
-                            </div>
+                            <p>07818 100505</p>
                         </div>
                         <div>
                             <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>mozs@mozstailoring.co.uk</p>
-                            </div>
+                            <p>mozs@mozstailoring.co.uk</p>
                         </div>
                         <div>
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Opening Hours</strong>
-                            </div>
+                            <i class="fas fa-info-circle"></i>
+                            <p>Walk-ins welcome or call ahead</p>
                         </div>
                     </div>
                     
                     <div class="hours">
-                        <p><span>Monday - Wednesday:</span> <span>10:00 - 19:00</span></p>
-                        <p><span>Thursday:</span> <span>10:00 - 20:00</span></p>
-                        <p><span>Friday - Saturday:</span> <span>10:00 - 19:00</span></p>
+                        <h3>Opening Times</h3>
+                        <p><span>Monday – Saturday:</span> <span>10:00am – 7:00pm</span></p>
+                        <p><span>Thursday:</span> <span>10:00am – 8:00pm</span></p>
                         <p><span>Sunday:</span> <span>Closed</span></p>
                     </div>
-
-                    <div class="visit-info">
-                        <h4>Visiting Us</h4>
-                        <ul>
-                            <li>Walk-ins welcome - no appointment needed</li>
-                            <li>Free parking available nearby</li>
-                            <li>Wheelchair accessible</li>
-                            <li>Bus routes: 22, 73, 100 stop nearby</li>
-                            <li>10 minute walk from Grays train station</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Map -->
-                <div class="map-container fade-in delay-1">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.123456789012!2d0.325678!3d51.478456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8b5a123456789%3A0xabcdef1234567890!2s66%20Orsett%20Road%2C%20Grays%20RM17%205EH!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form-container fade-in delay-2">
-                <div class="section-title">
-                    <h2>Send Us a Message</h2>
-                    <p>Have a question or want to discuss your tailoring needs? Send us a message and we'll get back to you as soon as possible.</p>
+                    
+                    <a href="tel:07818100505" class="btn" style="margin-top: 20px; width: 100%;">Call Now</a>
                 </div>
                 
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <select id="service" name="service" class="form-input">
-                            <option value="">Select a service...</option>
-                            <option value="mens">Men's Tailoring</option>
-                            <option value="womens">Women's Alterations</option>
-                            <option value="wedding">Wedding & Occasion Wear</option>
-                            <option value="repairs">Repairs</option>
-                            <option value="consultation">General Consultation</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" rows="5" required class="form-input" placeholder="Please describe what you need altered or repaired..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            I agree to the privacy policy and understand my data will be used only to respond to my enquiry.
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-section fade-in delay-3">
-                <div class="section-title">
-                    <h2>Frequently Asked Questions</h2>
+                <div class="map-container fade-in delay-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.722855663053!2d0.3248127769464762!3d51.4757389112562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8bc7c4a8c6c7b%3A0x23c3f5dd40a1c3e6!2s66%20Orsett%20Rd%2C%20Grays%20RM17%205EH%2C%20UK!5e0!3m2!1sen!2s!4v1694030000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>Do I need an appointment?</h3>
-                        <p>No, walk-ins are welcome during opening hours. However, for wedding consultations or complex projects, we recommend calling ahead.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>How long do alterations take?</h3>
-                        <p>Standard turnaround is 3-5 working days. Express service (24-48 hours) is available for a surcharge.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>How much do alterations cost?</h3>
-                        <p>Prices vary based on the work needed. We provide free estimates - bring your garment in for a no-obligation quote.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Do you do repairs?</h3>
-                        <p>Yes, we handle all types of repairs including zips, tears, hems, and buttons. We'll assess if it's repairable when you bring it in.</p>
-                    </div>
+            </div>
+            
+            <!-- Additional Information -->
+            <div class="why-grid" style="margin-top: 80px;">
+                <div class="why-item fade-in">
+                    <h3><i class="fas fa-parking"></i> Parking</h3>
+                    <p>Free on-street parking available near the studio. Please check signage for restrictions.</p>
+                </div>
+                <div class="why-item fade-in delay-1">
+                    <h3><i class="fas fa-bus"></i> Public Transport</h3>
+                    <p>Easily accessible by bus. The studio is located near Grays town centre and train station.</p>
+                </div>
+                <div class="why-item fade-in delay-2">
+                    <h3><i class="fas fa-wheelchair"></i> Accessibility</h3>
+                    <p>Ground floor studio with step-free access. Wide doorway for easy entry.</p>
+                </div>
+                <div class="why-item fade-in delay-3">
+                    <h3><i class="fas fa-question-circle"></i> Consultations</h3>
+                    <p>Free consultation for all alteration jobs. Bring your garments for an accurate quote.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Shared) -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <div class="footer-circular-logo">
-                            <div class="footer-circular-text" id="footerCircularText"></div>
-                            <div class="footer-circular-center">M</div>
-                        </div>
+                        <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="footer-logo-image">
+                        <div class="footer-text-top">Moz's</div>
+                        <div class="footer-text-bottom">Tailoring</div>
                     </div>
-                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years. Quality craftsmanship for men, women, and wedding wear.</p>
+                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years.</p>
                     
                     <div class="social-media">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" title="Follow on Instagram">
+                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" title="Follow on Facebook">
+                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok" title="Follow on TikTok">
+                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok">
                                 <i class="fab fa-tiktok"></i>
                             </a>
-                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp" title="Message on WhatsApp">
+                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
