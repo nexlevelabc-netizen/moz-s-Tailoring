@@ -108,77 +108,69 @@ section {
     background: transparent !important;
 }
 
-/* ========== ROTATING CIRCULAR TEXT LOGO ========== */
+/* ========== ROTATING CIRCULAR TEXT LOGO (HTML/CSS VERSION) ========== */
 .logo-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0;
-    background: transparent;
+    text-decoration: none;
+    z-index: 100;
 }
 
-.circular-logo {
-    width: 120px;
-    height: 120px;
+.circular-logo-container {
     position: relative;
-    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: rotateLogo 15s linear infinite;
-    background: transparent;
 }
 
-.circular-text {
+.circular-logo-text {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: rotateText 15s linear infinite reverse;
+    animation: rotateText 20s linear infinite;
 }
 
-.circular-text span {
+.circular-logo-text span {
     position: absolute;
     left: 50%;
     top: 0;
-    transform-origin: 0 60px;
+    transform-origin: 0 80px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    font-weight: 700;
-    color: var(--primary);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: 'Inter', sans-serif;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    color: snow;
 }
 
-.circular-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--accent);
-    z-index: 2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.logo-fallback {
+    font-family: 'Lato', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: snow;
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
-@keyframes rotateLogo {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.logo-text-top, .logo-text-bottom {
+    display: none;
 }
 
 @keyframes rotateText {
-    from {
+    0% {
         transform: rotate(0deg);
     }
-    to {
-        transform: rotate(-360deg);
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -391,57 +383,33 @@ section {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* ========== FOOTER LOGO ========== */
+/* ========== FOOTER ========== */
 .footer-logo-container {
-    position: relative;
-    width: 160px;
-    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
-.footer-circular-logo {
-    width: 160px;
-    height: 160px;
-    position: relative;
+.footer-logo-image {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: rotateLogo 20s linear infinite;
-    background: transparent;
+    margin-bottom: 10px;
 }
 
-.footer-circular-text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    animation: rotateText 20s linear infinite reverse;
-}
-
-.footer-circular-text span {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform-origin: 0 80px;
-    font-size: 18px;
+.footer-text-top {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
     font-weight: 700;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    font-family: 'Inter', sans-serif;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    color: var(--accent);
 }
 
-.footer-circular-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--accent);
-    z-index: 2;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+.footer-text-bottom {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
 }
 
 /* ========== REST OF YOUR CSS (KEEP ALL EXISTING STYLES) ========== */
@@ -534,70 +502,6 @@ section {
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
-@media (max-width: 1200px) {
-    .circular-logo {
-        width: 110px;
-        height: 110px;
-    }
-    
-    .circular-text span {
-        font-size: 15px;
-        transform-origin: 0 55px;
-    }
-    
-    .circular-center {
-        font-size: 20px;
-    }
-    
-    .footer-circular-logo {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .footer-circular-text span {
-        font-size: 16px;
-        transform-origin: 0 70px;
-    }
-    
-    .footer-circular-center {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 992px) {
-    .circular-logo {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .circular-text span {
-        font-size: 14px;
-        transform-origin: 0 50px;
-    }
-    
-    .circular-center {
-        font-size: 18px;
-    }
-    
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-    
-    .footer-circular-logo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .footer-circular-text span {
-        font-size: 14px;
-        transform-origin: 0 60px;
-    }
-    
-    .footer-circular-center {
-        font-size: 20px;
-    }
-}
-
 @media (max-width: 768px) {
     .mobile-toggle {
         display: block;
@@ -631,18 +535,20 @@ section {
         color: var(--primary);
     }
     
-    .circular-logo {
-        width: 90px;
-        height: 90px;
+    .circular-logo-container {
+        width: 120px;
+        height: 120px;
     }
     
-    .circular-text span {
-        font-size: 13px;
-        transform-origin: 0 45px;
+    .circular-logo-text span {
+        font-size: 14px;
+        transform-origin: 0 60px;
     }
     
-    .circular-center {
-        font-size: 16px;
+    .logo-fallback {
+        font-size: 36px;
+        width: 60px;
+        height: 60px;
     }
     
     .hero {
@@ -658,36 +564,23 @@ section {
     .premium-tagline {
         font-size: 1.6rem !important;
     }
-    
-    .footer-circular-logo {
+}
+
+@media (max-width: 576px) {
+    .circular-logo-container {
         width: 100px;
         height: 100px;
     }
     
-    .footer-circular-text span {
+    .circular-logo-text span {
         font-size: 12px;
         transform-origin: 0 50px;
     }
     
-    .footer-circular-center {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .circular-logo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .circular-text span {
-        font-size: 11px;
-        transform-origin: 0 40px;
-        letter-spacing: 1px;
-    }
-    
-    .circular-center {
-        font-size: 14px;
+    .logo-fallback {
+        font-size: 32px;
+        width: 50px;
+        height: 50px;
     }
     
     .hero h1 {
@@ -701,21 +594,6 @@ section {
     
     .premium-tagline {
         font-size: 1.4rem !important;
-    }
-    
-    .footer-circular-logo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .footer-circular-text span {
-        font-size: 10px;
-        transform-origin: 0 40px;
-        letter-spacing: 1px;
-    }
-    
-    .footer-circular-center {
-        font-size: 14px;
     }
 }
 
