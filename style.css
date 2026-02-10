@@ -731,3 +731,363 @@ html {
 .header-container::after {
     display: none !important;
 }
+
+/* ========== SERVICE DETAILS PAGE ========== */
+.service-detail {
+    margin-bottom: 80px;
+}
+
+.service-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.service-detail-content.reverse {
+    direction: rtl;
+}
+
+.service-detail-content.reverse .service-detail-text {
+    direction: ltr;
+}
+
+.service-detail-text {
+    padding: 20px;
+}
+
+.service-detail-text h3 {
+    color: var(--primary);
+    margin: 20px 0 15px;
+    font-size: 1.4rem;
+}
+
+.service-detail-text ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.service-detail-text li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.service-detail-text li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.service-detail-text .highlight {
+    background-color: var(--neutral);
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid var(--accent);
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.service-detail-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.service-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-detail-image:hover img {
+    transform: scale(1.05);
+}
+
+.pricing-info {
+    background-color: var(--neutral);
+    padding: 50px;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.pricing-card {
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.pricing-card h3 {
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pricing-card h3 i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.cta-box {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), #0d2142);
+    color: var(--secondary);
+    padding: 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.cta-box h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.cta-box .btn {
+    background-color: var(--accent);
+    color: var(--primary);
+    margin-top: 20px;
+}
+
+/* ========== PHOTOS PAGE ========== */
+.gallery-category {
+    margin-bottom: 60px;
+}
+
+.gallery-category h3 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 25, 49, 0.85);
+    color: var(--secondary);
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+.testimonials {
+    margin-top: 80px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.testimonial-card:before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.testimonial-text {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    border-top: 1px solid var(--neutral);
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author strong {
+    color: var(--primary);
+}
+
+.testimonial-author span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-form-container {
+    max-width: 800px;
+    margin: 80px auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.visit-info {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visit-info h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.visit-info ul {
+    list-style: none;
+}
+
+.visit-info li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.visit-info li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.faq-section {
+    margin-top: 80px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    background-color: var(--neutral);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.faq-item h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 992px) {
+    .service-detail-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .service-detail-content.reverse {
+        direction: ltr;
+    }
+    
+    .service-detail-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-info {
+        padding: 30px;
+    }
+    
+    .cta-box {
+        padding: 30px;
+    }
+    
+    .contact-form-container {
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-detail-text {
+        padding: 10px;
+    }
+    
+    .pricing-info {
+        padding: 20px;
+    }
+    
+    .pricing-card {
+        padding: 20px;
+    }
+    
+    .faq-item {
+        padding: 20px;
+    }
+}
