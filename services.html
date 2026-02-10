@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main Header (Shared) -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="container header-container">
+            <!-- Rotating Circular Logo -->
             <a href="index.html" class="logo-container">
-                <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="logo-image">
-                <div class="logo-fallback">M</div>
-                <div class="logo-text-top">Moz's</div>
-                <div class="logo-text-bottom">Tailoring</div>
+                <div class="circular-logo">
+                    <div class="circular-text" id="circularText"></div>
+                    <div class="circular-center">M</div>
+                </div>
             </a>
             
+            <!-- Navigation -->
             <nav class="main-nav">
                 <div class="mobile-toggle">
                     <i class="fas fa-bars"></i>
@@ -45,162 +47,184 @@
     <section class="page-hero">
         <div class="container page-hero-content">
             <h1 class="fade-in">Our Tailoring Services</h1>
-            <p class="fade-in delay-1">Comprehensive alteration and tailoring services for men, women, and special occasions.</p>
+            <p class="fade-in delay-1">Expert alterations and repairs for men, women, and wedding wear</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- Services Details -->
+    <section id="services-details">
         <div class="container">
-            <div class="section-title">
-                <h2>Complete Tailoring Services</h2>
-            </div>
-            <div class="services-grid">
-                <!-- Men's Tailoring -->
-                <div class="service-card fade-in" id="mens">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Men's Tailoring</h3>
-                        <p>Complete suit alterations and adjustments for the perfect fit.</p>
-                        <ul>
-                            <li>Suit alterations (jacket, trousers, full re fit)</li>
-                            <li>Shirt adjustments</li>
-                            <li>Trousers shortening, tapering, waist adjustment</li>
-                            <li>Coat and jacket resizing</li>
-                            <li>Blazer alterations</li>
-                            <li>Formal wear tailoring</li>
-                        </ul>
-                    </div>
+            <!-- Men's Tailoring -->
+            <div class="service-detail fade-in" id="mens">
+                <div class="section-title">
+                    <h2>Men's Tailoring</h2>
                 </div>
-                
-                <!-- Women's Alterations -->
-                <div class="service-card fade-in delay-1" id="womens">
-                    <div class="service-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Women's Alterations</h3>
-                        <p>Expert alterations for all types of women's clothing.</p>
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <p>Complete suit alterations and adjustments for the perfect fit. We handle everything from simple hemming to complete suit restructuring.</p>
+                        <h3>What We Offer:</h3>
                         <ul>
-                            <li>Dress resizing and reshaping</li>
-                            <li>Skirt and trouser alterations</li>
-                            <li>Zip replacements</li>
-                            <li>Blouse and jacket fitting</li>
-                            <li>Jeans hemming and tapering</li>
-                            <li>Formal wear adjustments</li>
+                            <li><strong>Suit alterations</strong> - Jacket, trousers, full re-fit</li>
+                            <li><strong>Shirt adjustments</strong> - Sleeve shortening, body taking in</li>
+                            <li><strong>Trouser alterations</strong> - Shortening, tapering, waist adjustment</li>
+                            <li><strong>Coat and jacket resizing</strong></li>
+                            <li><strong>Blazer alterations</strong></li>
+                            <li><strong>Formal wear tailoring</strong></li>
                         </ul>
+                        <p class="highlight">Last minute adjustments available for urgent needs.</p>
                     </div>
-                </div>
-                
-                <!-- Wedding & Occasion Wear -->
-                <div class="service-card fade-in delay-2" id="wedding">
-                    <div class="service-icon">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Wedding & Occasion Wear</h3>
-                        <p>Specialized alterations for your most important events.</p>
-                        <ul>
-                            <li>Bridal gown alterations</li>
-                            <li>Bridesmaid dresses</li>
-                            <li>Prom dresses</li>
-                            <li>Wedding suits</li>
-                            <li>Evening gown adjustments</li>
-                            <li>Last minute adjustments available</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Repairs -->
-                <div class="service-card fade-in delay-3" id="repairs">
-                    <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Repairs & Restoration</h3>
-                        <p>Bring your damaged garments back to life.</p>
-                        <ul>
-                            <li>Tears and rips repair</li>
-                            <li>Hem repairs and replacement</li>
-                            <li>Button replacement (matching available)</li>
-                            <li>Zip repairs and replacements</li>
-                            <li>Seam reinforcement</li>
-                            <li>Lining repairs</li>
-                        </ul>
+                    <div class="service-detail-image">
+                        <img src="images/moz4.jpg" alt="Men's suit tailoring">
                     </div>
                 </div>
             </div>
-            
-            <!-- Why Choose Us Section -->
-            <div class="why-us" style="margin-top: 80px; padding: 60px 0;">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Our Service Promise</h2>
+
+            <!-- Women's Alterations -->
+            <div class="service-detail fade-in delay-1" id="womens">
+                <div class="section-title">
+                    <h2>Women's Alterations</h2>
+                </div>
+                <div class="service-detail-content reverse">
+                    <div class="service-detail-image">
+                        <img src="images/moz7.jpg" alt="Women's dress alterations">
                     </div>
-                    <div class="why-grid">
-                        <div class="why-item fade-in">
-                            <h3><i class="fas fa-ruler-combined"></i> Precise Measurements</h3>
-                            <p>Every alteration begins with accurate measurements to ensure perfect fit.</p>
-                        </div>
-                        <div class="why-item fade-in delay-1">
-                            <h3><i class="fas fa-clipboard-check"></i> Quality Materials</h3>
-                            <p>We use only high-quality threads, zips, and materials that match your garment.</p>
-                        </div>
-                        <div class="why-item fade-in delay-2">
-                            <h3><i class="fas fa-history"></i> Fast Turnaround</h3>
-                            <p>Most alterations completed within 3-5 days, with urgent service available.</p>
-                        </div>
-                        <div class="why-item fade-in delay-3">
-                            <h3><i class="fas fa-handshake"></i> Satisfaction Guarantee</h3>
-                            <p>If you're not happy with the fit, we'll make adjustments until you are.</p>
-                        </div>
+                    <div class="service-detail-text">
+                        <p>Expert alterations for all types of women's clothing. From everyday wear to special occasion outfits.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li><strong>Dress resizing and reshaping</strong></li>
+                            <li><strong>Skirt and trouser alterations</strong></li>
+                            <li><strong>Zip replacements</strong></li>
+                            <li><strong>Blouse and jacket fitting</strong></li>
+                            <li><strong>Jeans hemming and tapering</strong></li>
+                            <li><strong>Formal wear adjustments</strong></li>
+                            <li><strong>Jacket and coat alterations</strong></li>
+                        </ul>
+                        <p class="highlight">We work with all fabrics including delicate materials.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Wedding & Occasion Wear -->
+            <div class="service-detail fade-in delay-2" id="wedding">
+                <div class="section-title">
+                    <h2>Wedding & Occasion Wear</h2>
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <p>Specialized alterations for your most important events. We handle wedding dresses with extra care and attention.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li><strong>Bridal gown alterations</strong></li>
+                            <li><strong>Bridesmaid dresses</strong></li>
+                            <li><strong>Prom dresses</strong></li>
+                            <li><strong>Wedding suits</strong></li>
+                            <li><strong>Evening gown adjustments</strong></li>
+                            <li><strong>Mother of the bride/groom outfits</strong></li>
+                            <li><strong>Page boy and flower girl outfits</strong></li>
+                        </ul>
+                        <p class="highlight">Wedding consultations available by appointment.</p>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/moz10.jpg" alt="Wedding dress alterations">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repairs -->
+            <div class="service-detail fade-in delay-3" id="repairs">
+                <div class="section-title">
+                    <h2>Repairs</h2>
+                </div>
+                <div class="service-detail-content reverse">
+                    <div class="service-detail-image">
+                        <img src="images/moz6.jpg" alt="Clothing repairs">
+                    </div>
+                    <div class="service-detail-text">
+                        <p>Quality repairs to extend the life of your favorite garments. We fix what others might deem unfixable.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li><strong>Tears and rips repair</strong></li>
+                            <li><strong>Hem repairs and restoration</strong></li>
+                            <li><strong>Button replacement</strong></li>
+                            <li><strong>Zip repairs and replacements</strong></li>
+                            <li><strong>Patch work</strong></li>
+                            <li><strong>Reinforcement of worn areas</strong></li>
+                            <li><strong>Lining replacement</strong></li>
+                        </ul>
+                        <p class="highlight">We aim to repair rather than replace whenever possible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Information -->
+            <div class="pricing-info fade-in">
+                <div class="section-title">
+                    <h2>Pricing & Turnaround</h2>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3><i class="fas fa-clock"></i> Turnaround Times</h3>
+                        <ul>
+                            <li><strong>Standard service:</strong> 3-5 working days</li>
+                            <li><strong>Express service:</strong> 24-48 hours (surcharge applies)</li>
+                            <li><strong>Same day:</strong> Available for simple jobs (call to confirm)</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3><i class="fas fa-pound-sign"></i> Pricing</h3>
+                        <ul>
+                            <li><strong>Free estimates</strong> with no obligation</li>
+                            <li><strong>Transparent pricing</strong> - we'll tell you the cost before we start</li>
+                            <li><strong>No hidden charges</strong></li>
+                            <li><strong>Competitive rates</strong> - often cheaper than high street chains</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3><i class="fas fa-concierge-bell"></i> Additional Services</h3>
+                        <ul>
+                            <li><strong>Home visit consultations</strong> available (fee applies)</li>
+                            <li><strong>Bulk orders</strong> (multiple garments) - discounted rates</li>
+                            <li><strong>Wedding party packages</strong></li>
+                            <li><strong>Collection and delivery</strong> available locally</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cta-box">
+                    <h3>Ready to get your garments tailored?</h3>
+                    <p>Bring your items to our studio for a free consultation and quote.</p>
+                    <a href="contact.html" class="btn">Contact Us Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section style="background-color: var(--primary); color: var(--secondary); padding: 60px 0; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready for a Perfect Fit?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Bring your garments to our studio in Grays for expert alterations. Walk-ins welcome or call ahead.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn" style="background-color: var(--accent); color: var(--primary);">Visit Our Studio</a>
-                <a href="tel:07818100505" class="btn" style="background-color: transparent; border: 2px solid var(--accent); color: var(--accent);">Call: 07818 100505</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (Shared) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="footer-logo-image">
-                        <div class="footer-text-top">Moz's</div>
-                        <div class="footer-text-bottom">Tailoring</div>
+                        <div class="footer-circular-logo">
+                            <div class="footer-circular-text" id="footerCircularText"></div>
+                            <div class="footer-circular-center">M</div>
+                        </div>
                     </div>
-                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years.</p>
+                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years. Quality craftsmanship for men, women, and wedding wear.</p>
                     
                     <div class="social-media">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
+                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" title="Follow on Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
+                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" title="Follow on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok">
+                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok" title="Follow on TikTok">
                                 <i class="fab fa-tiktok"></i>
                             </a>
-                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp">
+                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp" title="Message on WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
