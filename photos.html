@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main Header (Shared) -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="container header-container">
+            <!-- Rotating Circular Logo -->
             <a href="index.html" class="logo-container">
-                <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="logo-image">
-                <div class="logo-fallback">M</div>
-                <div class="logo-text-top">Moz's</div>
-                <div class="logo-text-bottom">Tailoring</div>
+                <div class="circular-logo">
+                    <div class="circular-text" id="circularText"></div>
+                    <div class="circular-center">M</div>
+                </div>
             </a>
             
+            <!-- Navigation -->
             <nav class="main-nav">
                 <div class="mobile-toggle">
                     <i class="fas fa-bars"></i>
@@ -45,145 +47,181 @@
     <section class="page-hero">
         <div class="container page-hero-content">
             <h1 class="fade-in">Our Work Gallery</h1>
-            <p class="fade-in delay-1">See examples of our tailoring and alteration work completed for customers in Grays.</p>
+            <p class="fade-in delay-1">See examples of our tailoring and alteration work</p>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery -->
     <section id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>Tailoring Work Examples</h2>
+                <h2>Before & After Transformations</h2>
+                <p style="max-width: 700px; margin: 0 auto;">Click on any image to view it larger</p>
             </div>
             
-            <!-- Category: Men's Tailoring -->
-            <div style="margin-bottom: 60px;">
-                <h3 style="color: var(--primary); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">Men's Tailoring</h3>
+            <!-- Men's Tailoring Gallery -->
+            <div class="gallery-category fade-in">
+                <h3>Men's Tailoring</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item fade-in">
-                        <img src="images/moz4.jpg" alt="Suit alteration in progress">
+                    <div class="gallery-item">
+                        <img src="images/moz4.jpg" alt="Suit alteration before and after">
+                        <div class="gallery-caption">Suit Jacket Resizing</div>
                     </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <img src="images/moz6.jpg" alt="Finished suit on hanger">
+                    <div class="gallery-item">
+                        <img src="images/moz1.jpg" alt="Trouser hemming">
+                        <div class="gallery-caption">Trouser Hemming & Tapering</div>
                     </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <img src="images/moz10.jpg" alt="Tailor measuring suit">
+                    <div class="gallery-item">
+                        <img src="images/moz2.jpg" alt="Shirt adjustments">
+                        <div class="gallery-caption">Shirt Sleeve Adjustment</div>
                     </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-user-tie" style="font-size: 3rem;"></i>
+                    <div class="gallery-item">
+                        <img src="images/moz3.jpg" alt="Coat alterations">
+                        <div class="gallery-caption">Overcoat Resizing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women's Alterations Gallery -->
+            <div class="gallery-category fade-in delay-1">
+                <h3>Women's Alterations</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/moz7.jpg" alt="Dress resizing">
+                        <div class="gallery-caption">Dress Reshaping</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz8.jpg" alt="Skirt alterations">
+                        <div class="gallery-caption">Skirt Hem & Waist Adjustment</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz9.jpg" alt="Blouse fitting">
+                        <div class="gallery-caption">Blouse Fitting</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz10.jpg" alt="Zip replacement">
+                        <div class="gallery-caption">Invisible Zip Replacement</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wedding & Special Occasion -->
+            <div class="gallery-category fade-in delay-2">
+                <h3>Wedding & Special Occasion</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/moz5.jpg" alt="Wedding dress alterations">
+                        <div class="gallery-caption">Bridal Gown Resizing</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz6.jpg" alt="Bridesmaid dress">
+                        <div class="gallery-caption">Bridesmaid Dress Alteration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz11.jpg" alt="Wedding suit">
+                        <div class="gallery-caption">Wedding Suit Tailoring</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/moz12.jpg" alt="Evening gown">
+                        <div class="gallery-caption">Evening Gown Adjustment</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repair Work -->
+            <div class="gallery-category fade-in delay-3">
+                <h3>Repair Work</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/repair1.jpg" alt="Tear repair">
+                        <div class="gallery-caption">Tear Repair (Denim)</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/repair2.jpg" alt="Zip replacement">
+                        <div class="gallery-caption">Complete Zip Replacement</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/repair3.jpg" alt="Hem restoration">
+                        <div class="gallery-caption">Hem Restoration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/repair4.jpg" alt="Button replacement">
+                        <div class="gallery-caption">Button Replacement Set</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials fade-in">
+                <div class="section-title">
+                    <h2>Customer Feedback</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"Moz transformed my wedding dress perfectly. It fit like a glove on the day and the attention to detail was incredible."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Sarah L.</strong>
+                            <span>Wedding Dress Client</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"I've been taking all my suits to Moz for years. The quality is consistently excellent and the turnaround is always fast."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>James K.</strong>
+                            <span>Regular Customer</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"Fixed a tear in my favorite jacket that I thought was beyond repair. You can't even tell it was damaged. Amazing work!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Emma R.</strong>
+                            <span>Repair Client</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Category: Wedding & Special Occasions -->
-            <div style="margin-bottom: 60px;">
-                <h3 style="color: var(--primary); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">Wedding & Special Occasions</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item fade-in">
-                        <img src="images/moz7.jpg" alt="Wedding dress alteration">
-                    </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-glass-cheers" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-ring" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-bow-tie" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Category: Women's Alterations -->
-            <div>
-                <h3 style="color: var(--primary); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">Women's Alterations</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item fade-in">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-tshirt" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-female" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-shoe-prints" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <!-- Placeholder for additional image -->
-                        <div style="width: 100%; height: 100%; background-color: var(--neutral); display: flex; align-items: center; justify-content: center; color: var(--primary);">
-                            <i class="fas fa-scissors" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Note about adding more images -->
-            <div style="text-align: center; margin-top: 60px; padding: 30px; background-color: var(--neutral); border-radius: 8px;">
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Have You Used Our Services?</h3>
-                <p style="color: var(--text-light); margin-bottom: 20px;">
-                    We're always adding more photos of our work. If you're a satisfied customer and would like to share photos of your altered garments (with permission), please contact us!
-                </p>
-                <a href="contact.html" class="btn">Contact Us About Photos</a>
+
+            <!-- Call to Action -->
+            <div class="cta-box fade-in">
+                <h3>Ready to transform your garments?</h3>
+                <p>Bring your items to our studio and see the difference expert tailoring makes.</p>
+                <a href="contact.html" class="btn">Book a Consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section style="background-color: var(--primary); color: var(--secondary); padding: 60px 0; text-align: center; margin-top: 40px;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">See Our Work In Person</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Visit our studio in Grays to see examples of our work and discuss your alteration needs.
-            </p>
-            <a href="contact.html" class="btn" style="background-color: var(--accent); color: var(--primary);">Visit Our Studio</a>
-        </div>
-    </section>
-
-    <!-- Footer (Shared) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="footer-logo-image">
-                        <div class="footer-text-top">Moz's</div>
-                        <div class="footer-text-bottom">Tailoring</div>
+                        <div class="footer-circular-logo">
+                            <div class="footer-circular-text" id="footerCircularText"></div>
+                            <div class="footer-circular-center">M</div>
+                        </div>
                     </div>
-                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years.</p>
+                    <p>Expert tailoring and alterations in the heart of Grays for over 20 years. Quality craftsmanship for men, women, and wedding wear.</p>
                     
                     <div class="social-media">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
+                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" title="Follow on Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
+                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" title="Follow on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok">
+                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok" title="Follow on TikTok">
                                 <i class="fab fa-tiktok"></i>
                             </a>
-                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp">
+                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp" title="Message on WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
