@@ -85,38 +85,40 @@ section {
     box-shadow: var(--shadow);
 }
 
-/* Header/Navigation */
+/* ========== UPDATED HEADER ========== */
+/* Remove background, keep logo, text, and navigation */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(to bottom, rgba(10, 25, 49, 0.95), rgba(10, 25, 49, 0.8));
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(10, 25, 49, 0.1);
+    background: transparent !important; /* REMOVED background */
+    backdrop-filter: none !important; /* REMOVED blur */
+    box-shadow: none !important; /* REMOVED shadow */
+    padding: 20px 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 20px;
 }
 
-/* Logo - DRAMATICALLY INCREASED SPACING */
+/* Logo - FIXED SPACING */
 .logo-container {
     display: flex;
     align-items: center;
     position: relative;
-    width: 220px; /* DRAMATICALLY INCREASED from 160px */
-    height: 180px; /* DRAMATICALLY INCREASED height */
-    margin-left: 0; /* Remove any negative margin */
+    width: 200px; /* Fixed width */
+    height: 120px; /* Reduced height for better spacing */
+    margin-left: 0;
 }
 
 .logo-image {
-    width: 90px; /* Slightly smaller to create more space */
-    height: 90px;
+    width: 70px; /* Smaller logo */
+    height: 70px;
     border-radius: 50%;
     object-fit: contain;
     position: absolute;
@@ -125,9 +127,9 @@ section {
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: var(--secondary);
-    padding: 6px;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    padding: 4px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230A1931"/><text x="50" y="50" font-family="Arial" font-size="30" fill="%23D4AF37" text-anchor="middle" dominant-baseline="middle">M</text></svg>');
     background-size: cover;
     background-position: center;
@@ -139,7 +141,7 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent);
     z-index: 3;
@@ -149,17 +151,17 @@ section {
     display: block;
 }
 
-/* Simple text positions - MUCH MORE SPACING */
+/* Logo text positions - FIXED SPACING */
 .logo-text-top, .logo-text-bottom {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 18px; /* Larger */
+    font-size: 13px; /* Adjusted size */
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--primary); /* Dark color for visibility */
     text-transform: uppercase;
-    letter-spacing: 2px; /* More spacing between letters */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Light shadow for readability */
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
     opacity: 1;
@@ -167,20 +169,20 @@ section {
     text-align: center;
 }
 
-/* MOZ'S positioned MUCH higher */
+/* MOZ'S - Positioned properly */
 .logo-text-top {
-    top: 25px; /* DRAMATICALLY HIGHER - was 5px */
-    font-size: 20px; /* Even larger */
+    top: 10px; /* Proper spacing from top */
+    font-size: 14px;
 }
 
-/* TAILORING positioned MUCH lower */
+/* TAILORING - Positioned properly */
 .logo-text-bottom {
-    bottom: 30px; /* DRAMATICALLY LOWER - was 15px */
-    font-size: 18px;
-    letter-spacing: 2.5px; /* More spacing */
+    bottom: 10px; /* Proper spacing from bottom */
+    font-size: 13px;
+    letter-spacing: 1.5px;
 }
 
-/* Main Navigation */
+/* ========== NAVIGATION - KEPT ========== */
 .main-nav ul {
     display: flex;
     list-style: none;
@@ -188,7 +190,7 @@ section {
 }
 
 .main-nav a {
-    color: var(--secondary);
+    color: var(--primary); /* Changed to dark color */
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
@@ -227,15 +229,16 @@ section {
 /* Mobile menu toggle */
 .mobile-toggle {
     display: none;
-    color: var(--secondary);
+    color: var(--primary); /* Changed to dark color */
     font-size: 1.5rem;
     cursor: pointer;
-    background: rgba(10, 25, 49, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 4px;
+    border: 1px solid rgba(10, 25, 49, 0.1);
 }
 
-/* Hero Section (for home page) */
+/* ========== HERO SECTION - UNCHANGED ========== */
 .hero {
     position: relative;
     height: 100vh;
@@ -243,8 +246,8 @@ section {
     color: var(--secondary);
     text-align: center;
     overflow: hidden;
-    margin-top: -140px;
-    padding-top: 140px;
+    margin-top: -120px; /* Adjusted for new header height */
+    padding-top: 120px; /* Adjusted for new header height */
 }
 
 .hero-slideshow {
@@ -350,13 +353,13 @@ section {
     padding: 0;
 }
 
-/* Page Hero (for other pages) */
+/* ========== PAGE HERO - ADJUSTED ========== */
 .page-hero {
     background-color: var(--primary);
     color: var(--secondary);
     text-align: center;
-    padding: 140px 0 80px;
-    margin-top: 140px;
+    padding: 120px 0 80px; /* Adjusted padding */
+    margin-top: 0; /* Removed margin */
     position: relative;
     overflow: hidden;
 }
@@ -570,17 +573,17 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Footer Logo - Matching dramatic spacing */
+/* Footer Logo - Matching spacing */
 .footer-logo-container {
     position: relative;
-    width: 220px; /* Matching header */
-    height: 220px; /* Taller for footer */
+    width: 200px;
+    height: 180px;
     margin-bottom: 20px;
 }
 
 .footer-logo-image {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: contain;
     position: absolute;
@@ -589,25 +592,25 @@ footer {
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: var(--secondary);
-    padding: 6px;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    padding: 4px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230A1931"/><text x="50" y="50" font-family="Arial" font-size="30" fill="%23D4AF37" text-anchor="middle" dominant-baseline="middle">M</text></svg>');
     background-size: cover;
     background-position: center;
 }
 
-/* Footer text positions - Matching dramatic spacing */
+/* Footer text positions - Matching spacing */
 .footer-text-top, .footer-text-bottom {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 700;
     color: #FFFFFF;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
     opacity: 1;
@@ -616,14 +619,14 @@ footer {
 }
 
 .footer-text-top {
-    top: 25px; /* Matching header */
-    font-size: 20px;
+    top: 10px;
+    font-size: 14px;
 }
 
 .footer-text-bottom {
-    bottom: 30px; /* Matching header */
-    font-size: 18px;
-    letter-spacing: 2.5px;
+    bottom: 10px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
 }
 
 .social-media {
@@ -718,27 +721,27 @@ footer {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .logo-container {
-        width: 200px;
-        height: 160px;
+        width: 180px;
+        height: 100px;
     }
     
     .logo-image {
-        width: 85px;
-        height: 85px;
+        width: 60px;
+        height: 60px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 16px;
+        font-size: 12px;
     }
     
     .logo-text-top {
-        top: 22px;
-        font-size: 18px;
+        top: 8px;
+        font-size: 13px;
     }
     
     .logo-text-bottom {
-        bottom: 26px;
-        font-size: 16px;
+        bottom: 8px;
+        font-size: 12px;
     }
     
     .hero h1 {
@@ -750,53 +753,53 @@ footer {
     }
     
     .footer-logo-container {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 160px;
     }
     
     .footer-logo-image {
-        width: 110px;
-        height: 110px;
+        width: 70px;
+        height: 70px;
     }
     
     .footer-text-top, .footer-text-bottom {
-        font-size: 16px;
+        font-size: 12px;
     }
     
     .footer-text-top {
-        top: 22px;
-        font-size: 18px;
+        top: 8px;
+        font-size: 13px;
     }
     
     .footer-text-bottom {
-        bottom: 26px;
-        font-size: 16px;
+        bottom: 8px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 992px) {
     .logo-container {
-        width: 180px;
-        height: 140px;
+        width: 160px;
+        height: 90px;
     }
     
     .logo-image {
-        width: 75px;
-        height: 75px;
+        width: 55px;
+        height: 55px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 15px;
+        font-size: 11px;
     }
     
     .logo-text-top {
-        top: 20px;
-        font-size: 17px;
+        top: 7px;
+        font-size: 12px;
     }
     
     .logo-text-bottom {
-        bottom: 24px;
-        font-size: 15px;
+        bottom: 7px;
+        font-size: 11px;
     }
     
     .hero h1 {
@@ -820,27 +823,27 @@ footer {
     }
     
     .footer-logo-container {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 140px;
     }
     
     .footer-logo-image {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
     }
     
     .footer-text-top, .footer-text-bottom {
-        font-size: 15px;
+        font-size: 11px;
     }
     
     .footer-text-top {
-        top: 20px;
-        font-size: 17px;
+        top: 7px;
+        font-size: 12px;
     }
     
     .footer-text-bottom {
-        bottom: 24px;
-        font-size: 15px;
+        bottom: 7px;
+        font-size: 11px;
     }
 }
 
@@ -855,7 +858,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(10, 25, 49, 0.95);
+        background-color: rgba(255, 255, 255, 0.95); /* Light background for mobile */
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -864,6 +867,7 @@ footer {
         transition: var(--transition);
         z-index: 1000;
         gap: 30px;
+        backdrop-filter: blur(10px);
     }
     
     .main-nav ul.active {
@@ -873,10 +877,39 @@ footer {
     .main-nav a {
         font-size: 1.3rem;
         padding: 10px 20px;
+        color: var(--primary);
+    }
+    
+    .logo-container {
+        width: 140px;
+        height: 80px;
+    }
+    
+    .logo-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logo-text-top, .logo-text-bottom {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    
+    .logo-text-top {
+        top: 6px;
+        font-size: 11px;
+    }
+    
+    .logo-text-bottom {
+        bottom: 6px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
     }
     
     .hero {
         min-height: 600px;
+        margin-top: -100px;
+        padding-top: 100px;
     }
     
     .hero h1 {
@@ -904,32 +937,6 @@ footer {
         padding: 60px 0;
     }
     
-    .logo-container {
-        width: 150px;
-        height: 120px;
-    }
-    
-    .logo-image {
-        width: 65px;
-        height: 65px;
-    }
-    
-    .logo-text-top, .logo-text-bottom {
-        font-size: 13px;
-        letter-spacing: 1.5px;
-    }
-    
-    .logo-text-top {
-        top: 18px;
-        font-size: 14px;
-    }
-    
-    .logo-text-bottom {
-        bottom: 20px;
-        font-size: 13px;
-        letter-spacing: 1.8px;
-    }
-    
     .hero-content {
         top: 58%;
         padding-top: 30px;
@@ -941,33 +948,61 @@ footer {
     
     .footer-logo-container {
         margin: 0 auto 20px;
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 120px;
     }
     
     .footer-logo-image {
-        width: 90px;
-        height: 90px;
+        width: 50px;
+        height: 50px;
     }
     
     .footer-text-top, .footer-text-bottom {
-        font-size: 13px;
-        letter-spacing: 1.5px;
+        font-size: 10px;
+        letter-spacing: 1px;
     }
     
     .footer-text-top {
-        top: 18px;
-        font-size: 14px;
+        top: 6px;
+        font-size: 11px;
     }
     
     .footer-text-bottom {
-        bottom: 20px;
-        font-size: 13px;
-        letter-spacing: 1.8px;
+        bottom: 6px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
     }
 }
 
 @media (max-width: 576px) {
+    .logo-container {
+        width: 120px;
+        height: 70px;
+    }
+    
+    .logo-image {
+        width: 40px;
+        height: 40px;
+        border-width: 1px;
+        padding: 3px;
+    }
+    
+    .logo-text-top, .logo-text-bottom {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+    
+    .logo-text-top {
+        top: 5px;
+        font-size: 10px;
+    }
+    
+    .logo-text-bottom {
+        bottom: 5px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+    
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -986,36 +1021,12 @@ footer {
     
     .hero {
         min-height: 500px;
+        margin-top: -80px;
+        padding-top: 80px;
     }
     
     .hero-content {
         top: 55%;
-    }
-    
-    .logo-container {
-        width: 130px;
-        height: 100px;
-    }
-    
-    .logo-image {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .logo-text-top, .logo-text-bottom {
-        font-size: 11px;
-        letter-spacing: 1.2px;
-    }
-    
-    .logo-text-top {
-        top: 15px;
-        font-size: 12px;
-    }
-    
-    .logo-text-bottom {
-        bottom: 18px;
-        font-size: 11px;
-        letter-spacing: 1.5px;
     }
     
     .premium-tagline {
@@ -1034,29 +1045,29 @@ footer {
     }
     
     .footer-logo-container {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 100px;
     }
     
     .footer-logo-image {
-        width: 75px;
-        height: 75px;
+        width: 40px;
+        height: 40px;
     }
     
     .footer-text-top, .footer-text-bottom {
-        font-size: 11px;
-        letter-spacing: 1.2px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
     }
     
     .footer-text-top {
-        top: 15px;
-        font-size: 12px;
+        top: 5px;
+        font-size: 10px;
     }
     
     .footer-text-bottom {
-        bottom: 18px;
-        font-size: 11px;
-        letter-spacing: 1.5px;
+        bottom: 5px;
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 }
 
@@ -1064,27 +1075,3 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-
-/* NUCLEAR OPTION - If spacing still doesn't work, add this at the end: */
-/*
-.logo-container {
-    width: 250px !important;
-    height: 200px !important;
-}
-
-.logo-text-top {
-    top: 35px !important;
-    font-size: 22px !important;
-}
-
-.logo-text-bottom {
-    bottom: 40px !important;
-    font-size: 20px !important;
-    letter-spacing: 3px !important;
-}
-
-.logo-image {
-    width: 80px !important;
-    height: 80px !important;
-}
-*/
