@@ -15,16 +15,98 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Circular Logo Animation */
+        .circular-logo-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .circular-logo-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotateText 20s linear infinite;
+            color: snow;
+        }
+        
+        .circular-logo-text span {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-origin: 0 80px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        @keyframes rotateText {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .logo-fallback {
+            font-family: 'Lato', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: snow;
+            background-color: transparent;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .logo-text-top, .logo-text-bottom {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Main Header (Shared) -->
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo-container">
-                <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="logo-image">
-                <div class="logo-fallback">M</div>
-                <div class="logo-text-top">Moz's</div>
-                <div class="logo-text-bottom">Tailoring</div>
+                <div class="circular-logo-container">
+                    <div class="circular-logo-text">
+                        <span style="transform: rotate(0deg)">M</span>
+                        <span style="transform: rotate(15deg)">O</span>
+                        <span style="transform: rotate(30deg)">Z</span>
+                        <span style="transform: rotate(45deg)">'</span>
+                        <span style="transform: rotate(60deg)">S</span>
+                        <span style="transform: rotate(90deg)">T</span>
+                        <span style="transform: rotate(105deg)">A</span>
+                        <span style="transform: rotate(120deg)">I</span>
+                        <span style="transform: rotate(135deg)">L</span>
+                        <span style="transform: rotate(150deg)">O</span>
+                        <span style="transform: rotate(165deg)">R</span>
+                        <span style="transform: rotate(180deg)">I</span>
+                        <span style="transform: rotate(195deg)">N</span>
+                        <span style="transform: rotate(210deg)">G</span>
+                    </div>
+                    <div class="logo-fallback">M</div>
+                </div>
             </a>
             
             <nav class="main-nav">
