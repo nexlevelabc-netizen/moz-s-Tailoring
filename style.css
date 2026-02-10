@@ -85,40 +85,43 @@ section {
     box-shadow: var(--shadow);
 }
 
-/* ========== UPDATED HEADER ========== */
-/* Remove background, keep logo, text, and navigation */
+/* ========== FIXED HEADER - COMPLETELY TRANSPARENT ========== */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent !important; /* REMOVED background */
-    backdrop-filter: none !important; /* REMOVED blur */
-    box-shadow: none !important; /* REMOVED shadow */
-    padding: 20px 0;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 15px 20px !important;
+    background: transparent !important;
 }
 
-/* Logo - FIXED SPACING */
+/* FIXED: Logo container with better spacing */
 .logo-container {
     display: flex;
     align-items: center;
     position: relative;
-    width: 200px; /* Fixed width */
-    height: 120px; /* Reduced height for better spacing */
-    margin-left: 0;
+    width: 200px;
+    height: 90px;
+    margin: 0;
+    background: transparent;
 }
 
 .logo-image {
-    width: 70px; /* Smaller logo */
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: contain;
     position: absolute;
@@ -151,52 +154,61 @@ section {
     display: block;
 }
 
-/* Logo text positions - FIXED SPACING */
+/* FIXED: Logo text with proper spacing */
 .logo-text-top, .logo-text-bottom {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 13px; /* Adjusted size */
+    font-size: 12px;
     font-weight: 700;
-    color: var(--primary); /* Dark color for visibility */
+    color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Light shadow for readability */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
     opacity: 1;
     width: 100%;
     text-align: center;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
-/* MOZ'S - Positioned properly */
+/* MOZ'S - positioned properly above the circle */
 .logo-text-top {
-    top: 10px; /* Proper spacing from top */
-    font-size: 14px;
-}
-
-/* TAILORING - Positioned properly */
-.logo-text-bottom {
-    bottom: 10px; /* Proper spacing from bottom */
+    top: 5px;
     font-size: 13px;
-    letter-spacing: 1.5px;
 }
 
-/* ========== NAVIGATION - KEPT ========== */
+/* TAILORING - positioned properly below the circle */
+.logo-text-bottom {
+    bottom: 5px;
+    font-size: 12px;
+    letter-spacing: 1.3px;
+}
+
+/* ========== NAVIGATION - COMPLETELY VISIBLE ========== */
 .main-nav ul {
     display: flex;
     list-style: none;
     gap: 30px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
-    color: var(--primary); /* Changed to dark color */
+    color: var(--primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1rem;
     transition: var(--transition);
-    padding: 5px 0;
+    padding: 8px 12px;
     position: relative;
+    background: transparent;
+    border-radius: 4px;
 }
 
 .main-nav a:after {
@@ -212,6 +224,7 @@ section {
 
 .main-nav a:hover {
     color: var(--accent);
+    background: rgba(212, 175, 55, 0.1);
 }
 
 .main-nav a:hover:after {
@@ -229,16 +242,16 @@ section {
 /* Mobile menu toggle */
 .mobile-toggle {
     display: none;
-    color: var(--primary); /* Changed to dark color */
+    color: var(--primary);
     font-size: 1.5rem;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     padding: 10px;
     border-radius: 4px;
     border: 1px solid rgba(10, 25, 49, 0.1);
 }
 
-/* ========== HERO SECTION - UNCHANGED ========== */
+/* ========== HERO SECTION WITH SLIDESHOW ========== */
 .hero {
     position: relative;
     height: 100vh;
@@ -246,8 +259,8 @@ section {
     color: var(--secondary);
     text-align: center;
     overflow: hidden;
-    margin-top: -120px; /* Adjusted for new header height */
-    padding-top: 120px; /* Adjusted for new header height */
+    margin-top: -90px;
+    padding-top: 90px;
 }
 
 .hero-slideshow {
@@ -277,12 +290,18 @@ section {
     z-index: 1;
 }
 
+/* HERO BACKGROUND IMAGES - STILL HERE */
 .hero-slide.slide-1 {
     background-image: linear-gradient(rgba(10, 25, 49, 0.4), rgba(10, 25, 49, 0.3)), url('images/moz1.jpg');
 }
 
 .hero-slide.slide-2 {
     background-image: linear-gradient(rgba(10, 25, 49, 0.4), rgba(10, 25, 49, 0.3)), url('images/moz2.jpg');
+}
+
+/* Add a third slide for better slideshow experience */
+.hero-slide.slide-3 {
+    background-image: linear-gradient(rgba(10, 25, 49, 0.4), rgba(10, 25, 49, 0.3)), url('images/moz3.jpg');
 }
 
 .hero-content {
@@ -353,13 +372,42 @@ section {
     padding: 0;
 }
 
-/* ========== PAGE HERO - ADJUSTED ========== */
+/* Slideshow dots navigation */
+.slideshow-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--accent);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: var(--accent);
+}
+
+/* ========== PAGE HERO ========== */
 .page-hero {
     background-color: var(--primary);
     color: var(--secondary);
     text-align: center;
-    padding: 120px 0 80px; /* Adjusted padding */
-    margin-top: 0; /* Removed margin */
+    padding: 120px 0 80px;
+    margin-top: 0;
     position: relative;
     overflow: hidden;
 }
@@ -393,7 +441,7 @@ section {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Services Section (shared) */
+/* Services Section */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -573,7 +621,7 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Footer Logo - Matching spacing */
+/* Footer Logo */
 .footer-logo-container {
     position: relative;
     width: 200px;
@@ -600,7 +648,7 @@ footer {
     background-position: center;
 }
 
-/* Footer text positions - Matching spacing */
+/* Footer text positions */
 .footer-text-top, .footer-text-bottom {
     position: absolute;
     left: 50%;
@@ -722,26 +770,26 @@ footer {
 @media (max-width: 1200px) {
     .logo-container {
         width: 180px;
-        height: 100px;
+        height: 80px;
     }
     
     .logo-image {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .logo-text-top {
-        top: 8px;
-        font-size: 13px;
+        top: 4px;
+        font-size: 12px;
     }
     
     .logo-text-bottom {
-        bottom: 8px;
-        font-size: 12px;
+        bottom: 4px;
+        font-size: 11px;
     }
     
     .hero h1 {
@@ -780,26 +828,26 @@ footer {
 @media (max-width: 992px) {
     .logo-container {
         width: 160px;
-        height: 90px;
+        height: 70px;
     }
     
     .logo-image {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 11px;
+        font-size: 10px;
     }
     
     .logo-text-top {
-        top: 7px;
-        font-size: 12px;
+        top: 3px;
+        font-size: 11px;
     }
     
     .logo-text-bottom {
-        bottom: 7px;
-        font-size: 11px;
+        bottom: 3px;
+        font-size: 10px;
     }
     
     .hero h1 {
@@ -858,7 +906,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.95); /* Light background for mobile */
+        background-color: rgba(255, 255, 255, 0.98);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -882,34 +930,34 @@ footer {
     
     .logo-container {
         width: 140px;
-        height: 80px;
+        height: 60px;
     }
     
     .logo-image {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 1px;
     }
     
     .logo-text-top {
-        top: 6px;
-        font-size: 11px;
+        top: 2px;
+        font-size: 10px;
     }
     
     .logo-text-bottom {
-        bottom: 6px;
-        font-size: 10px;
-        letter-spacing: 1.2px;
+        bottom: 2px;
+        font-size: 9px;
+        letter-spacing: 1.1px;
     }
     
     .hero {
         min-height: 600px;
-        margin-top: -100px;
-        padding-top: 100px;
+        margin-top: -70px;
+        padding-top: 70px;
     }
     
     .hero h1 {
@@ -931,6 +979,10 @@ footer {
     
     .premium-tagline {
         font-size: 1.4rem !important;
+    }
+    
+    .slideshow-dots {
+        bottom: 30px;
     }
     
     section {
@@ -977,30 +1029,30 @@ footer {
 @media (max-width: 576px) {
     .logo-container {
         width: 120px;
-        height: 70px;
+        height: 50px;
     }
     
     .logo-image {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         border-width: 1px;
         padding: 3px;
     }
     
     .logo-text-top, .logo-text-bottom {
-        font-size: 9px;
+        font-size: 8px;
         letter-spacing: 0.8px;
     }
     
     .logo-text-top {
-        top: 5px;
-        font-size: 10px;
+        top: 1px;
+        font-size: 9px;
     }
     
     .logo-text-bottom {
-        bottom: 5px;
-        font-size: 9px;
-        letter-spacing: 1px;
+        bottom: 1px;
+        font-size: 8px;
+        letter-spacing: 0.9px;
     }
     
     .hero h1 {
@@ -1021,8 +1073,8 @@ footer {
     
     .hero {
         min-height: 500px;
-        margin-top: -80px;
-        padding-top: 80px;
+        margin-top: -60px;
+        padding-top: 60px;
     }
     
     .hero-content {
@@ -1074,4 +1126,12 @@ footer {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Remove any header background elements */
+.main-header::before,
+.main-header::after,
+.header-container::before,
+.header-container::after {
+    display: none !important;
 }
