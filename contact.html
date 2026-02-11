@@ -16,73 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Circular Logo Animation - Keep this inline as it's unique to the logo */
-        .circular-logo-container {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .circular-logo-text {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            animation: rotateText 20s linear infinite;
-            color: snow;
-        }
-        
-        .circular-logo-text span {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform-origin: 0 80px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        @keyframes rotateText {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        .logo-fallback {
-            font-family: 'Lato', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: snow;
-            background-color: transparent;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            z-index: 100;
-        }
-        
-        .logo-text-top, .logo-text-bottom {
-            display: none;
-        }
-        
-        /* Fix map display - Keep this as it's specific to contact page */
+        /* Keep map display styles only */
         .map-container iframe {
             width: 100%;
             height: 400px;
@@ -90,10 +24,53 @@
             border-radius: 8px;
         }
         
-        /* Fix footer spacing - Keep this as it's specific to contact page */
+        /* Keep footer spacing for contact page only */
         footer {
             padding-top: 80px;
             padding-bottom: 40px;
+        }
+        
+        /* Keep social media icons specific to contact page if needed */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .social-icon.facebook {
+            background-color: #1877F2;
+        }
+        
+        .social-icon.tiktok {
+            background-color: #000000;
+        }
+        
+        .social-icon.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -181,7 +158,7 @@
                 </div>
                 
                 <div class="map-container fade-in delay-1">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.722855663053!2d0.3248127769464762!3d51.4757389112562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8bc7c4a8c6c7b%3A0x23c3f5dd40a1c3e6!2s66%20Orsett%20Rd%2C%20Grays%20RM17%205EH%2C%20UK!5e0!3m2!1sen!2s!4v1694030000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Moz's Tailoring at 66 Orsett Road, Grays"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.722855663053!2d0.3248127769464762!3d51.4757389112562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8bc7c4a8c6c7b%3A0x23c3f5dd40a1c3e6!2s66%20Orsett%20Rd%2C%20Grays%20RM17%205EH%2C%20UK!5e0!3m2!1sen!2s!4v1694030000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             
@@ -222,16 +199,16 @@
                     <div class="social-media">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" aria-label="Follow us on Facebook">
+                            <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok" aria-label="Follow us on TikTok">
+                            <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok">
                                 <i class="fab fa-tiktok"></i>
                             </a>
-                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp" aria-label="Message us on WhatsApp">
+                            <a href="https://wa.me/447818100505" target="_blank" class="social-icon whatsapp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
@@ -239,19 +216,19 @@
                 </div>
                 <div>
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="photos.html">Photos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><a href="index.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Home</a></li>
+                        <li><a href="services.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Services</a></li>
+                        <li><a href="photos.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Photos</a></li>
+                        <li><a href="contact.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 66 Orsett Road, Grays, RM17 5EH</p>
-                    <p><i class="fas fa-phone"></i> 07818 100505</p>
-                    <p><i class="fas fa-envelope"></i> mozs@mozstailoring.co.uk</p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 10am-7pm, Thu: 10am-8pm</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> 66 Orsett Road, Grays, RM17 5EH</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> 07818 100505</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> mozs@mozstailoring.co.uk</p>
+                    <p><i class="fas fa-clock" style="color: var(--accent); margin-right: 10px;"></i> Mon-Sat: 10am-7pm, Thu: 10am-8pm</p>
                 </div>
             </div>
             <div class="copyright">
