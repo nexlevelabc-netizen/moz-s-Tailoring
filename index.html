@@ -15,79 +15,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Circular Logo Animation for homepage */
-        .circular-logo-container {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .circular-logo-text {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            animation: rotateText 20s linear infinite;
-            color: snow;
-        }
-        
-        .circular-logo-text span {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform-origin: 0 80px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        @keyframes rotateText {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        .logo-fallback {
-            font-family: 'Lato', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: snow;
-            background-color: transparent;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            z-index: 100;
-        }
-        
-        .logo-text-top, .logo-text-bottom {
-            display: none;
-        }
-    </style>
+    <!-- Circular logo styles removed - now in style.css -->
 </head>
 <body>
     <!-- Main Header (Shared across all pages) -->
     <header class="main-header">
         <div class="container header-container">
-            <!-- Rotating Circular Logo - Fixed with proper container -->
+            <!-- Rotating Circular Logo -->
             <a href="index.html" class="logo-container">
                 <div class="circular-logo-container">
                     <div class="circular-logo-text">
