@@ -411,23 +411,35 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-content ul {
+/* Footer links styling */
+.footer-links {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-content li {
+.footer-links li {
     margin-bottom: 12px;
 }
 
-.footer-content a {
+.footer-links a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: var(--transition);
+    font-size: 1rem;
 }
 
-.footer-content a:hover {
+.footer-links a:hover {
     color: var(--accent);
     padding-left: 5px;
+}
+
+/* Footer contact info icons */
+.footer-content p i {
+    color: var(--accent);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
 }
 
 .copyright {
@@ -500,6 +512,11 @@ footer {
     height: 100%;
 }
 
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(10, 25, 49, 0.1);
+}
+
 .service-content {
     flex-grow: 1;
     display: flex;
@@ -509,6 +526,37 @@ footer {
 .service-content .btn {
     margin-top: auto;
     align-self: flex-start;
+}
+
+/* Service card list styling */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.service-card li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.service-card li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Service Icons */
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
 }
 
 /* ========== REST OF YOUR CSS (KEEP ALL EXISTING STYLES) ========== */
@@ -568,13 +616,6 @@ footer {
     color: var(--secondary);
     padding: 40px;
     border-radius: 8px;
-}
-
-/* Service Icons */
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 20px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
