@@ -115,16 +115,18 @@ section {
     align-items: center;
     text-decoration: none;
     z-index: 100;
+    margin-right: auto; /* Push logo to the left */
 }
 
 .circular-logo-container {
     position: relative;
     width: 160px;
     height: 160px;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -20px; /* Move logo slightly left */
 }
 
 .circular-logo-text {
@@ -283,9 +285,7 @@ section {
     background-image: linear-gradient(rgba(10, 25, 49, 0.4), rgba(10, 25, 49, 0.3)), url('images/moz2.jpg');
 }
 
-.hero-slide.slide-3 {
-    background-image: linear-gradient(rgba(10, 25, 49, 0.4), rgba(10, 25, 49, 0.3)), url('images/moz3.jpg');
-}
+/* Removed slide-3 as requested */
 
 .hero-content {
     position: absolute;
@@ -384,32 +384,101 @@ section {
 }
 
 /* ========== FOOTER ========== */
-.footer-logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+footer {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 60px 0 40px; /* Increased bottom padding */
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px; /* Added space above copyright */
+}
+
+.footer-content h3,
+.footer-content h4 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
-.footer-logo-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+.footer-content ul {
+    list-style: none;
 }
 
-.footer-text-top {
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
+.footer-content li {
+    margin-bottom: 12px;
+}
+
+.footer-content a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-content a:hover {
     color: var(--accent);
+    padding-left: 5px;
 }
 
-.footer-text-bottom {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--secondary);
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Social Media Icons - FIXED WITH COLORS */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.facebook {
+    background-color: #1877F2;
+}
+
+.tiktok {
+    background-color: #000000;
+}
+
+.whatsapp {
+    background-color: #25D366;
 }
 
 /* ========== SERVICES GRID LAYOUT FIX ========== */
@@ -476,6 +545,17 @@ section {
     position: relative;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
 /* Contact Section */
 .contact-container {
     display: grid;
@@ -490,25 +570,11 @@ section {
     border-radius: 8px;
 }
 
-/* Social Media Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.5rem;
-    transition: var(--transition);
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Service Icons */
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -548,6 +614,7 @@ section {
     .circular-logo-container {
         width: 120px;
         height: 120px;
+        margin-left: -10px;
     }
     
     .circular-logo-text span {
@@ -574,12 +641,18 @@ section {
     .premium-tagline {
         font-size: 1.6rem !important;
     }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 576px) {
     .circular-logo-container {
         width: 100px;
         height: 100px;
+        margin-left: -10px;
     }
     
     .circular-logo-text span {
@@ -604,6 +677,12 @@ section {
     
     .premium-tagline {
         font-size: 1.4rem !important;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }
 
