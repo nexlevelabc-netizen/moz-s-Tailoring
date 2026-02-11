@@ -81,6 +81,83 @@
         .logo-text-top, .logo-text-bottom {
             display: none;
         }
+        
+        /* Fix map display */
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        /* Fix why-grid layout */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 80px;
+        }
+        
+        @media (max-width: 992px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Fix footer spacing */
+        footer {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        
+        /* Fix social media icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .social-icon.facebook {
+            background-color: #1877F2;
+        }
+        
+        .social-icon.tiktok {
+            background-color: #000000;
+        }
+        
+        .social-icon.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -171,8 +248,8 @@
                 </div>
             </div>
             
-            <!-- Additional Information -->
-            <div class="why-grid" style="margin-top: 80px;">
+            <!-- Additional Information - Fixed Layout -->
+            <div class="why-grid">
                 <div class="why-item fade-in">
                     <h3><i class="fas fa-parking"></i> Parking</h3>
                     <p>Free on-street parking available near the studio. Please check signage for restrictions.</p>
@@ -199,7 +276,7 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <img src="images/moz-logo.jpg" alt="Moz's Tailoring Logo" class="footer-logo-image">
+                        <!-- Removed Moz's logo image as requested -->
                         <div class="footer-text-top">Moz's</div>
                         <div class="footer-text-bottom">Tailoring</div>
                     </div>
@@ -225,18 +302,18 @@
                 </div>
                 <div>
                     <h3>Quick Links</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="index.html" style="color: var(--secondary); text-decoration: none; line-height: 2;">Home</a></li>
-                        <li><a href="services.html" style="color: var(--secondary); text-decoration: none; line-height: 2;">Services</a></li>
-                        <li><a href="photos.html" style="color: var(--secondary); text-decoration: none; line-height: 2;">Photos</a></li>
-                        <li><a href="contact.html" style="color: var(--secondary); text-decoration: none; line-height: 2;">Contact</a></li>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><a href="index.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Home</a></li>
+                        <li><a href="services.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Services</a></li>
+                        <li><a href="photos.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Photos</a></li>
+                        <li><a href="contact.html" style="color: var(--secondary); text-decoration: none; line-height: 2.5; display: block;">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> 66 Orsett Road, Grays, RM17 5EH</p>
-                    <p><i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> 07818 100505</p>
-                    <p><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> mozs@mozstailoring.co.uk</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> 66 Orsett Road, Grays, RM17 5EH</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> 07818 100505</p>
+                    <p style="margin-bottom: 15px;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> mozs@mozstailoring.co.uk</p>
                     <p><i class="fas fa-clock" style="color: var(--accent); margin-right: 10px;"></i> Mon-Sat: 10am-7pm, Thu: 10am-8pm</p>
                 </div>
             </div>
